@@ -53,7 +53,7 @@ body main .screen-two .box-lucky {
   background: #e4edf1;
   box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.5);
   padding: 1rem;
-  animation: upToDown 0.8s;
+  animation: upToDown 1.2s ease-in-out;
 }
 body main .screen-two .box-lucky p {
   font-family: "Dancing Script", cursive;
@@ -96,13 +96,9 @@ body main .screen-two button:hover {
 }
 @keyframes upToDown {
   0% {
-    transform: translateY(340px);
-    visibility: 0;
-    scale: 0;
+    transform: translateY(150px) scale(0);
   }
   100% {
-    transform: translateY(0);
-    visibility: 1;
-    scale: 1;
+    transform: translateY(0) scale(1);
   }
 }/*# sourceMappingURL=style.css.map */
