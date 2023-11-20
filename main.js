@@ -14,13 +14,23 @@ function getLucky(data) {
     });
 }
 
-btnCookie.addEventListener('click', () => {
-  screenOne.classList.toggle('hide');
-  screenTwo.classList.toggle('hide');
+function handleClick(e) {
+  hiddenScreen();
   getLucky();
-});
+}
 
-btnAgain.addEventListener('click', () => {
+function hiddenScreen() {
   screenOne.classList.toggle('hide');
   screenTwo.classList.toggle('hide');
+}
+
+btnCookie.addEventListener('click', handleClick);
+btnAgain.addEventListener('click', hiddenScreen);
+
+document.addEventListener('keydown', e => {
+  if (e.key == 'Enter' && screenOne.classList.contains('hide')) {
+    handleClick();
+  } else if (e.key == 'Enter' && screenTwo.classList.contains('hide')) {
+    hiddenScreen();
+  }
 });
