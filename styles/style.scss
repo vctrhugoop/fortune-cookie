@@ -55,28 +55,42 @@ body {
         border: none;
         background-color: transparent;
         cursor: pointer;
-      }
-    }
-    .box-lucky {
-      background: #e4edf1;
-      box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.5);
-      padding: 1rem;
 
-      p {
-        font-family: 'Dancing Script', cursive;
-        font-size: 2.4rem;
-        color: #000;
+        &:hover {
+          animation: shake 0.1s infinite;
+        }
       }
     }
 
     .screen-two {
+      .box-lucky {
+        background: #e4edf1;
+        box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.5);
+        padding: 1rem;
+        animation: upToDown 0.8s;
+
+        p {
+          font-family: 'Dancing Script', cursive;
+          font-size: 2.4rem;
+          color: #000;
+        }
+      }
       button {
         border: none;
         border-radius: 4px;
         background: #ff9500;
+
         color: #fff;
+
         padding: 1.6rem;
+
         cursor: pointer;
+
+        transition: transform 0.2s ease-in;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
   }
@@ -84,4 +98,35 @@ body {
 
 .hide {
   display: none;
+}
+
+@keyframes shake {
+  0% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 7px;
+  }
+  50% {
+    margin-left: 0;
+  }
+  75% {
+    margin-left: -7px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes upToDown {
+  0% {
+    transform: translateY(340px);
+    visibility: 0;
+    scale: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: 1;
+    scale: 1;
+  }
 }
