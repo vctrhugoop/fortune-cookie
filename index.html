@@ -15,16 +15,22 @@
   </head>
   <body>
     <main>
-      <h1>What's your luck today?</h1>
-      <p>Open the cookie and find out!</p>
-      <div>
-        <p>
-          Se alguém está tão cansado que não possa te dar um sorriso, deixa-lhe
-          o teu.
-        </p>
+      <div class="screen-one">
+        <h1>What's your luck today?</h1>
+        <p>Open the cookie and find out!</p>
+        <button class="btn-cookie">
+          <img src="./assets/fortune-cookie.svg" alt="" />
+        </button>
       </div>
-      <img src="./assets/fortune-cookie.svg" alt="" />
-      <button>Open another cookie</button>
+      <div class="screen-two hide">
+        <h1>Here's your luck today:</h1>
+        <div class="box-lucky">
+          <p></p>
+        </div>
+        <img src="./assets/opened-cookie.svg" alt="" />
+        <button class="btn-again">Open another cookie</button>
+      </div>
     </main>
+    <script src="./main.js"></script>
   </body>
 </html>
