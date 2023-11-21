@@ -1,27 +1,12 @@
-const screenOne = document.querySelector('.screen-one');
-const screenTwo = document.querySelector('.screen-two');
+import { getLucky } from './api.js';
+import { hiddenScreen } from './utils.js';
+
 const btnCookie = document.querySelector('.btn-cookie');
-const boxLucky = document.querySelector('.box-lucky');
 const btnAgain = document.querySelector('.btn-again');
-
-function getLucky(data) {
-  fetch('https://api.adviceslip.com/advice')
-    .then(response => response.json())
-    .then(data => {
-      const adviceJson = data['slip'];
-
-      boxLucky.querySelector('p').innerText = `${adviceJson['advice']}`;
-    });
-}
 
 function handleClick(e) {
   hiddenScreen();
   getLucky();
-}
-
-function hiddenScreen() {
-  screenOne.classList.toggle('hide');
-  screenTwo.classList.toggle('hide');
 }
 
 btnCookie.addEventListener('click', handleClick);
