@@ -1,5 +1,5 @@
-const screenOne = document.querySelector('.screen-one');
-const screenTwo = document.querySelector('.screen-two');
+export const screenOne = document.querySelector('.screen-one');
+export const screenTwo = document.querySelector('.screen-two');
 
 export function hiddenScreen() {
   screenOne.classList.toggle('hide');
